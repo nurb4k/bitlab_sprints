@@ -1,0 +1,205 @@
+* {
+    font-family: VK, sans-serif;
+    color: #447BBA;
+}
+
+body {
+    margin: 0 auto;
+
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #447BBA;
+}
+
+.logo > p {
+    margin: 8px 0 0 120px;
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+}
+
+.search {
+    margin-left: 250px;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.menu {
+    background-color: #f2f2f2;
+    width: 25%;
+    height: 100vh;
+    text-align: left;
+}
+
+
+.menu > ul {
+    list-style: none;
+    margin-left: 90px;
+    letter-spacing: 0.7px;
+}
+
+.menu > ul > li {
+    color: #447BBA;
+    padding-top: 20px;
+}
+
+.content {
+    background-color: #f2f2f2;
+    height: 900px;
+    width: 75%;
+
+    display: flex;
+}
+
+.profile {
+    margin-top: 22px;
+    width: 30%;
+    height: 100%;
+}
+
+.profile__avatar {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 12px;
+    padding: 15px;
+
+}
+
+.btn {
+    background-color: #E5EBF1;
+    border: none;
+    width: 90%;
+    font-size: 16px;
+    color: #447BBA;
+    border-radius: 6px;
+    height: 40px;
+    margin-top: 9px;
+    margin-left: 14px;
+}
+
+.information {
+    width: 70%;
+    height: 100%;
+}
+
+.information__user {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 12px;
+    width: 85%;
+    height: 40%;
+    margin-top: 22px;
+    margin-left: 20px;
+}
+
+.user__details {
+    height: 25%;
+    width: 100%;
+    display: flex;
+}
+
+.test {
+    width: 80%;
+}
+
+.username {
+    color: black;
+    font-size: 32px;
+    font-weight: inherit;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 0;
+
+}
+
+.bio {
+
+    color: black;
+    margin-left: 15px;
+    margin-top: 0px;
+    font-size: 18px;
+    font-weight: lighter;
+    width: 150px;
+    height: 20px;
+}
+
+.status {
+    font-size: 8px;
+    color: grey;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.user__personal {
+    padding-left: 20px;
+    width: 100%;
+    height: 40%;
+    display: flex;
+}
+
+.questions > * {
+    color: darkgray;
+}
+
+.question {
+    width: 200px;
+}
+
+.user__account {
+    display: flex;
+}
+
+.card {
+    margin-left: 42px;
+}
+.digit{
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.text{
+    color: grey;
+    text-align: center;
+    font-size: 12px;
+}
+
+.profile__friends {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile__friendsAvas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.friend {
+
+    width: 70px;
+    height: 65px;
+    margin-left: 25px;
+    margin-bottom: 50px;
+}
+
+.friend > img {
+    border-radius: 50%;
+    width: 50px;
+    height: 45px;
+}
+
