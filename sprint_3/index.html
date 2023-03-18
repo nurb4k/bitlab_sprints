@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<div class="container border d-flex" style="align-items: center; justify-content: space-around;">
+    <div>
+        <label for="akwa">Enter sum</label><br>
+        <input type="number" id="akwa" onkeyup="esepte()">
+        <select name="" id="type" onchange="esepte()">
+            <option id="tenge" value="KZT">KZT</option>
+            <option id="dollar" value="USD">USD</option>
+            <option id="euro" value="EUR">EUR</option>
+        </select>
+    </div>
+    <div>KZT<br>
+        <input id="kzt" type="text" disabled value="">
+    </div>
+    <div>USD<br>
+        <input id="usd" type="text" disabled value="">
+    </div>
+    <div>EUR<br>
+        <input id="eur" type="text" disabled value="">
+    </div>
+</div>
+<body>
+<script type="text/javascript">
+    function esepte() {
+        if (document.getElementById("akwa").value != null) {
+
+            if (document.getElementById("type").value === 'KZT') {
+                let akwa = document.getElementById("akwa").value;
+                let usd = akwa / 420;
+                let eur = akwa / 450;
+
+                document.getElementById("usd").value = usd;
+
+                document.getElementById("eur").value = eur;
+
+
+            }
+
+            if (document.getElementById("type").value === 'USD') {
+                let akwa = document.getElementById("akwa").value;
+                let kzt = akwa * 420;
+                let eur = akwa * 1.15;
+
+                document.getElementById("kzt").value = kzt;
+
+                document.getElementById("eur").value = eur;
+
+
+            }
+            if (document.getElementById("type").value === 'EUR') {
+                let akwa = document.getElementById("akwa").value;
+                let kzt = akwa * 450;
+                let usd = akwa / 1.15;
+
+                document.getElementById("kzt").value = kzt;
+
+                document.getElementById("usd").value = usd;
+
+
+            }
+
+
+        }
+    }
+
+
+</script>
+</body>
+</html>
