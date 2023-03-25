@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; font-family: Arial, serif;">
+<div class="content">
+    <div class="navbar">
+        <div class="logo">
+            <a href="#" class="logoButton">
+                <strong>TWITTER</strong>
+            </a>
+        </div>
+        <div class="navMenu">
+            <div>
+                <a href="#" class="menuButton">Tweets</a>
+            </div>
+            <div>
+                <a href="#" class="menuButton" id="profile">--</a>
+            </div>
+            <form action="index.html" method="post" id="logoutForm" class="logoutStyle">
+                <button type="submit" class="menuButton">logout</button>
+                <!--                <a href="#" class="menuButton" type="submit" >logout</a>-->
+            </form>
+        </div>
+    </div>
+
+    <div class="main">
+        <div>
+            <div class="registerForm">
+                <div>
+                    <h1 id="welcome"></h1>
+                </div>
+                <div class="field" style="margin-left: 60px">
+                    <div>
+                        <label for="email">EMAIL:</label>
+                    </div>
+                    <div class="input">
+                        <h3 id="email"></h3>
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <label for="fullName">FULL NAME:</label>
+                    </div>
+                    <div class="input">
+                        <h3 id="fullName"></h3>
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <label for="country">COUNTRY:</label>
+                    </div>
+                    <div class="input">
+                        <h3 id="country"></h3>
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <label for="birthdate">BIRTHDAY:</label>
+                    </div>
+                    <div class="input">
+                        <h3 id="birthdate"></h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    const authUser = JSON.parse(localStorage.getItem('authUser'));
+    if (authUser) {
+        document.getElementById('welcome').innerText = `Welcome ${authUser.fullName}`;
+        document.getElementById('email').innerText = authUser.email;
+        document.getElementById('fullName').innerText = authUser.fullName;
+        document.getElementById('country').innerText = authUser.country;
+        document.getElementById('birthdate').innerText = authUser.birthday;
+        document.getElementById('profile').innerText = authUser.fullName;
+    }
+
+
+    document.getElementById('logoutForm').onsubmit = () => {
+        delete localStorage.authUser;
+    };
+</script>
+</body>
+
+</html>

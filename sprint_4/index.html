@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="content">
+    <div class="navbar">
+        <div class="logo">
+            <a href="#" class="logoButton">
+                <strong>TWITTER</strong>
+            </a>
+        </div>
+        <div class="navMenu">
+            <a href="#" class="menuButton">Tweets</a>
+            <a href="index.html" class="menuButton">Login</a>
+            <a href="register.html" class="menuButton">Register</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div>
+            <form class="registerForm" method="post" id="form" action="profile.html">
+                <h3 class="error" id="error"></h3>
+                <div class="field">
+                    <div>
+                        <label for="email">EMAIL:</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="email" id="email">
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <label for="password">PASSWORD:</label>
+                    </div>
+                    <div class="input">
+                        <input type="password" name="email" id="password">
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <button type="submit" class="submitButton">SIGN IN</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script>
+    const handleSubmit = () => {
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const error = document.getElementById('error');
+
+        if (!emailInput.value || !passwordInput.value) {
+            error.innerText = 'Error: please enter your email and password';
+            return false;
+        }
+
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const currentUser = users.find(user => user.email === emailInput.value && user.password === passwordInput.value);
+
+        if (!currentUser) {
+            error.innerText = 'Error: invalid email or password';
+            return false;
+        }
+
+        localStorage.authUser = JSON.stringify(currentUser);
+    }
+
+    document.getElementById('form').onsubmit = handleSubmit;
+
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    font-family: "Roboto Thin", sans-serif;
+}
+
+.navbar {
+    padding: 20px;
+    background-color: #0a5d74;
+    display: flex;
+}
+
+.logo {
+    width: 40%;
+}
+
+.navMenu {
+    width: 60%;
+    /*text-align: right;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.logoButton {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menuButton {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    margin-left: 20px;
+}
+
+.logoutStyle button {
+    background-color: #0a5d74;
+    border: none;
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.field {
+    padding: 10px;
+}
+
+.input input, select {
+    width: 300px;
+    height: 40px;
+}
+
+.input {
+    padding-top: 10px;
+}
+
+.submitButton {
+    height: 40px;
+    width: 150px;
+    border: none;
+    background-color: #02058b;
+    color: aliceblue;
+}
+
+.error {
+    color: #ff0018;
+}

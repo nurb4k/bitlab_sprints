@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; font-family: Arial, serif;">
+<div class="content">
+    <div class="navbar">
+        <div class="logo">
+            <a href="#" class="logoButton">
+                <strong>TWITTER</strong>
+            </a>
+        </div>
+        <div class="navMenu">
+            <a href="#" class="menuButton">Tweets</a>
+            <a href="index.html" class="menuButton">Login</a>
+            <a href="register.html" class="menuButton">Register</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div>
+            <form class="registerForm" method="post" id="form" action="index.html">
+                <h3 class="error" id="error"></h3>
+                <div class="field">
+                    <div>
+                        <label for="email">EMAIL:</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="email" id="email">
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <label for="password">PASSWORD:</label>
+                    </div>
+                    <div class="input">
+                        <input type="password" name="email" id="password">
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <label for="fullName">FULL NAME:</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="email" id="fullName">
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <label for="country">COUNTRY:</label>
+                    </div>
+                    <div class="input">
+                        <select name="country" id="country">
+                            <option> Kazakhstan</option>
+                            <option> Russia</option>
+                            <option> China</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <label for="birthday">BIRTHDAY:</label>
+                    </div>
+                    <div class="input">
+                        <input type="date" name="email" id="birthday">
+                    </div>
+                </div>
+                <div class="field">
+                    <div>
+                        <button id="submit" class="submitButton">REGISTER</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script>
+
+    if (!localStorage.users) {
+        const users = [];
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+
+
+    const handleSubmit = () => {
+        const error = document.getElementById('error');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const fullNameInput = document.getElementById('fullName');
+        const countryInput = document.getElementById('country');
+        const birthdayInput = document.getElementById('birthday');
+
+
+        if (!emailInput.value || !passwordInput.value || !fullNameInput.value || !countryInput.value || !birthdayInput.value) {
+            error.innerText = 'Error: please fill out all fields';
+            return false;
+        }
+
+        const user = {
+            email: emailInput.value,
+            password: passwordInput.value,
+            fullName: fullNameInput.value,
+            country: countryInput.value,
+            birthday: birthdayInput.value
+        };
+
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+
+
+        if (users.some(u => u.email === emailInput.value)) {
+            error.innerText = 'Error: email already in use';
+            return false;
+        }
+        users.push(user);
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+    document.getElementById('form').onsubmit = handleSubmit;
+</script>
+</body>
+</html>
